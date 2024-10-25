@@ -1,0 +1,62 @@
+1.ROS nodes : Launch ROS core and carry out the following tasks
+  (a) List the currently running nodes
+    Ans: Only "/rosout" is running
+  
+  (b) What is the purpose of node /rosout
+    Ans:  "/rosout" subscribes to the standard /rosout topic, records these messages in a textual log file, and rebroadcasts the messages on /rosout_agg.
+    
+  (c) List the currently running topics
+    Ans: "/rosout" and "/rosout_agg"
+   
+  (d) What topics are subscribed by the node /rosout
+    Ans: "/rosout [unknown type]"
+    
+  (e) What topics are published by the node /rosout
+    Ans: " /rosout_agg [rosgraph_msgs/Log]"
+    
+  (f) What are the services provided by the node /rosout   
+    Ans: "/rosout/get_loggers" and "/rosout/set_logger_level"
+    
+  (g) Kill the node /rosout and again list the running nodes. What is your observation.
+    Ans: Wheni killed /rosout, it showed "killing /rosout - killed". But when i tried listing rosnodes, it showed "/rosout" as running.
+      
+  (h) What are the functions of commands cleanup, info, kill, list, machine & ping of the rosnode command-line tool   
+    Ans: rosnode cleanup	purge registration information of unreachable nodes
+    rosnode info	print information about node
+    rosnode kill	kill a running node
+    rosnode list	list active nodes
+    rosnode machine	list nodes running on a particular machine or list machines
+    rosnode ping	test connectivity to node
+	  
+  
+2.  (b) Launch rqt_graph. Save its screenshot as question2_rqt1.png Comment on your
+observations from rqt_graph.
+    Ans: Node "/nithik_pubnode" is publishing to "/rosout"
+
+   (d) Comment on your observations from rqt_graph.
+    Ans:3 publisher nodes "nithik_node1" is running concurrently with some numbers behind the node name
+    
+    
+3.(b) Comment on your observations from rqt_graph.             
+    Ans: Node "/nithik_node1" is publishing to "/rosout" and topic "/Greetings". Node "/RAA_subnode" is subscribing to "/Greetings" and publishing to "/rosout"
+   
+   
+    
+4.(a) List the currently running nodes
+    Ans: "/CET", "/M1RAA 2024_3741_1729830984390", "/nithik_3678_1729830969200" and "/rosout" are running.
+    
+  (b) List the currently running topics  
+    Ans:"/hello_class", "/hello_college", "/rosout", "/rosout_agg", "/welcome"
+
+    
+  (c) What is the role of the node rosout
+    Ans: The "/rosout" node serves as the centralised login system for ros."/rosout" subscribes to the standard /rosout topic, records these messages in a textual log file, and rebroadcasts the messages on "/rosout_agg".
+    
+    
+  (d) Change the name of node 2 to 'M1RAA 2024' and rerun the code. Write down any error message displayed.   
+    Ans:   nodeB.py:10: UserWarning: 'M1RAA 2024_3079_1729828971326' is not a legal ROS base name. This may cause problems with other ROS tools.
+  rospy.init_node('M1RAA 2024', anonymous=True)
+[FATAL] [1729828971.446209]: unable to register service [/M1RAA 2024_3079_1729828971326/get_loggers] with master: ERROR: parameter [service] contains illegal chars
+[FATAL] [1729828971.448693]: unable to register service [/M1RAA 2024_3079_1729828971326/set_logger_level] with master: ERROR: parameter [service] contains illegal chars
+
+         
